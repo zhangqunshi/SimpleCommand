@@ -316,7 +316,7 @@ public class mainUI extends javax.swing.JFrame {
             return;
         }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         String currDate = sdf.format(new Date());
 
         outputTextArea.setText(cmd + " at " + currDate + "\n");
