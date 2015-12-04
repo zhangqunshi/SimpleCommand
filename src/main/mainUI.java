@@ -53,6 +53,7 @@ public class mainUI extends javax.swing.JFrame {
         historyComboBox = new javax.swing.JComboBox();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         historyLabel = new javax.swing.JLabel();
+        clearHistoryButton = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -102,6 +103,13 @@ public class mainUI extends javax.swing.JFrame {
 
         historyLabel.setText("历史:");
 
+        clearHistoryButton.setText("清空");
+        clearHistoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearHistoryButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,8 +130,13 @@ public class mainUI extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(historyComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cmdTextField))
-                                .addGap(19, 19, 19)
-                                .addComponent(runCmdButton))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(runCmdButton))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(clearHistoryButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -173,8 +186,9 @@ public class mainUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(historyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(historyLabel))
-                        .addGap(16, 16, 16)
+                            .addComponent(historyLabel)
+                            .addComponent(clearHistoryButton))
+                        .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(hostsLabel)
                             .addComponent(outputLabel))
@@ -230,6 +244,11 @@ public class mainUI extends javax.swing.JFrame {
         JComboBox comboBox = (JComboBox) evt.getSource();
         cmdTextField.setText("" + comboBox.getSelectedItem());
     }//GEN-LAST:event_historyComboBoxActionPerformed
+
+    private void clearHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearHistoryButtonActionPerformed
+        this.historyComboBox.removeAllItems();
+        this.cmdTextField.setText("");
+    }//GEN-LAST:event_clearHistoryButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,6 +361,7 @@ public class mainUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearHistoryButton;
     private javax.swing.JLabel cmdLabel;
     private javax.swing.JTextField cmdTextField;
     private javax.swing.JButton exitButton;
