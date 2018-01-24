@@ -7,6 +7,7 @@
 需要JDK1.7或者JRE
 
 使用界面：
+
 ![](screenshot/SimpleCommand.png)
 
 
